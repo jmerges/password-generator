@@ -29,3 +29,23 @@ var digits = [
 var specialCharacters = [
   ' ','!','"','#','$','%','&',"'",'(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','{','|','}','~'
 ];
+
+// TODO: isInt() function
+
+function generatePassword() {
+
+  var numCharacters;
+
+  numCharacters = prompt("Enter a password length between 8 and 128");
+
+  while (!numCharacters.isInt()) {
+    alert("Please enter an integer between 8 and 128");
+  
+    if (Integer.parseInt(numCharacters) < 8 || numCharacters > 128) {
+      alert("Password length must be between 8 and 128");
+      continue;
+    }
+  }
+  console.log(numCharacters);
+}
+generatePassword();
