@@ -53,7 +53,6 @@ function generatePassword() {
     }
     break;
   }
-  console.log(numCharacters);
 
   var passwordCharacters = [];
 
@@ -63,7 +62,7 @@ function generatePassword() {
   var digitBool = confirm("Should the password contain numeric characters?");
   var specialBool = confirm("Should the password contain special characters?");
 
-  // populate passwordCharacters
+  // populate passwordCharacters with user selected character set(s)
   if (lowerCaseBool) {
     for (var i=0; i<lowerCaseAlphabet.length; i++) {
       passwordCharacters.push(lowerCaseAlphabet[i]);
@@ -87,6 +86,8 @@ function generatePassword() {
 
   var password = "";
 
+  // iterates numCharacters times and adds a random character from
+  //  the character list at each iteration to the password
   for (var i=0; i<numCharacters; i++) {
     var randIndex = Math.floor(Math.random()*passwordCharacters.length);
     password+=passwordCharacters[randIndex];
