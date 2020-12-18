@@ -54,5 +54,33 @@ function generatePassword() {
     break;
   }
   console.log(numCharacters);
+
+  // user input
+  var lowerCaseBool = confirm("Should the password contain lower case alphabetic characters?");
+  var upperCaseBool = confirm("Should the password contain upper case alphabetic characters?");
+  var digitBool = confirm("Should the password contain numeric characters?");
+  var specialBool = confirm("Should the password contain special characters?");
+
+  // populate passwordCharacters
+  if (lowerCaseBool) {
+    for (var i=0; i<lowerCaseAlphabet.length; i++) {
+      passwordCharacters.push(lowerCaseAlphabet[i]);
+    }
+  }
+  if (upperCaseBool) {
+    for (var i=0; i<upperCaseAlphabet.length; i++) {
+      passwordCharacters.push(upperCaseAlphabet[i]);
+    }
+  }
+  if (digitBool) {
+    for (var i=0; i<digits.length; i++) {
+      passwordCharacters.push(digits[i]);
+    }
+  }
+  if (specialBool) {
+    for (var i=0; i<specialCharacters.length; i++) {
+      passwordCharacters.push(specialCharacters[i]);
+    }
+  }
 }
 generatePassword();
