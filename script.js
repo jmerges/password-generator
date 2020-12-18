@@ -91,6 +91,5 @@ function generatePassword() {
     var randIndex = Math.floor(Math.random()*passwordCharacters.length);
     password+=passwordCharacters[randIndex];
   }
-  console.log(password);
+  return password;
 }
-generatePassword();
