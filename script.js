@@ -34,15 +34,24 @@ function generatePassword() {
 
   var numCharacters;
 
-  numCharacters = prompt("Enter a password length between 8 and 128");
+  // loop to make sure numCharacters is an integer between 8 and 128
+  while (true) {
+    numCharacters = prompt("Enter a password length between 8 and 128");
 
-  while (Number.isInteger(numCharacters)) {
-    alert("Please enter an integer between 8 and 128");
+    if (!Number.isInteger(parseInt(numCharacters))) {
+      alert("Please enter an integer between 8 and 128");
+      continue;
+    }
   
-    if (Integer.parseInt(numCharacters) < 8 || numCharacters > 128) {
+    if (parseInt(numCharacters) < 8 || parseInt(numCharacters) > 128) {
       alert("Password length must be between 8 and 128");
       continue;
     }
+
+    if (numCharacters === "") {
+      continue;
+    }
+    break;
   }
   console.log(numCharacters);
 }
