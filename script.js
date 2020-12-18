@@ -30,25 +30,13 @@ var specialCharacters = [
   ' ','!','"','#','$','%','&',"'",'(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','{','|','}','~'
 ];
 
-function isInt(str) {
-  for (var i=0; i<str.length; i++) {
-    if (str[i].isDigit()) {
-      continue;
-    }
-    else {
-      return false;
-    }
-  }
-  return true;
-}
-
 function generatePassword() {
 
   var numCharacters;
 
   numCharacters = prompt("Enter a password length between 8 and 128");
 
-  while (!numCharacters.isInt()) {
+  while (Number.isInteger(numCharacters)) {
     alert("Please enter an integer between 8 and 128");
   
     if (Integer.parseInt(numCharacters) < 8 || numCharacters > 128) {
