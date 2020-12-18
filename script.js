@@ -56,11 +56,20 @@ function generatePassword() {
 
   var passwordCharacters = [];
 
-  // user input
-  var lowerCaseBool = confirm("Should the password contain lower case alphabetic characters?");
-  var upperCaseBool = confirm("Should the password contain upper case alphabetic characters?");
-  var digitBool = confirm("Should the password contain numeric characters?");
-  var specialBool = confirm("Should the password contain special characters?");
+  // user input -- loop to make sure user picks at least one set of characters
+  while (true) {
+    var lowerCaseBool = confirm("Should the password contain lower case alphabetic characters?");
+    var upperCaseBool = confirm("Should the password contain upper case alphabetic characters?");
+    var digitBool = confirm("Should the password contain numeric characters?");
+    var specialBool = confirm("Should the password contain special characters?");
+
+    if (!lowerCaseBool && !upperCaseBool && !digitBool && !specialBool) {
+      alert("Please select at least one set of characters.");
+    }
+    else {
+      break;
+    }
+  }
 
   // populate passwordCharacters with user selected character set(s)
   if (lowerCaseBool) {
