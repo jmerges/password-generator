@@ -30,7 +30,17 @@ var specialCharacters = [
   ' ','!','"','#','$','%','&',"'",'(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','{','|','}','~'
 ];
 
-// TODO: isInt() function
+function isInt(str) {
+  for (var i=0; i<str.length; i++) {
+    if (str[i].isDigit()) {
+      continue;
+    }
+    else {
+      return false;
+    }
+  }
+  return true;
+}
 
 function generatePassword() {
 
