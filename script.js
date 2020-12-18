@@ -55,6 +55,8 @@ function generatePassword() {
   }
   console.log(numCharacters);
 
+  var passwordCharacters = [];
+
   // user input
   var lowerCaseBool = confirm("Should the password contain lower case alphabetic characters?");
   var upperCaseBool = confirm("Should the password contain upper case alphabetic characters?");
@@ -82,5 +84,13 @@ function generatePassword() {
       passwordCharacters.push(specialCharacters[i]);
     }
   }
+
+  var password = "";
+
+  for (var i=0; i<numCharacters; i++) {
+    var randIndex = Math.floor(Math.random()*passwordCharacters.length);
+    password+=passwordCharacters[randIndex];
+  }
+  console.log(password);
 }
 generatePassword();
